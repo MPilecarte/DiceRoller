@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
 
         val randomInt = (1..100).random().toString() // converte o random (que é do tipo Int) em uma String para ser exibida na caixa de texto
 
-        val resultText: TextView = findViewById(R.id.RollButton)
+        val resultText: TextView = findViewById(R.id.RandomNumber)
 //     declarando uma variavel de nome 'resultText' com ?classe? TextView e buscando no layout
 
 //       Ou binding.<nome da caixa de text>
