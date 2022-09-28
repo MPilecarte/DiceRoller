@@ -45,12 +45,10 @@
         android:id="@+id/imageData"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="141dp"
-        tools:layout_editor_absoluteY="145dp"
-        tools:srcCompat="@tools:sample/avatars"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/RandomNumber"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/RandomNumber"/>
+        tools:srcCompat="@tools:sample/avatars[3]" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
