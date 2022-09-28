@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.renderscript.ScriptGroup
 import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
 import com.example.dice_roller.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -29,8 +30,13 @@ class MainActivity : AppCompatActivity() {
 
 //       Ou binding.<nome da caixa de text>
         resultText.text= randomInt
+//      jogando o texto do layout na variavel 'resultText'
 
-//        jogando o texto do layout na variavel 'resultText'
+        val Toast = Toast.makeText(this, "Rolou um dado!", Toast.LENGTH_SHORT) //cria a mensagem
+        Toast.show() // exibe a mensagem
+        resultText.text = resultText.toString()
+
+
     }
 
 }
