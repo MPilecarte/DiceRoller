@@ -7,34 +7,58 @@ import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import com.example.dice_roller.databinding.ActivityMainBinding
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
-    lateinit var Binding: ActivityMainBinding
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val rollButton:Button =findViewById(R.id.RollButton)
 //   ou  val rollButton:Button = viewBinding(R.id.RollButton)
-        rollButton.setOnClickListener { rollDice() }
+        RollButton.setOnClickListener { rollDice() }
 //        Evento listener executa a função quando o botão for clicado
     }
 
-    fun rollDice(){
+    private fun rollDice(){
 
-        val randomInt = (1..100).random().toString() // converte o random (que é do tipo Int) em uma String para ser exibida na caixa de texto
+        var randomNumber = (1..6).random() // converte o random (que é do tipo Int) em uma String para ser exibida na caixa de texto
+        val imageDice: Int
 
-        val resultText: TextView = findViewById(R.id.RandomNumber)
+        when (randomNumber) {
+            1 -> {
+                imageDice = R.drawable.dice_1
+            }
+            2 -> {
+                imageDice = R.drawable.dice_2
+            }
+            3 -> {
+                imageDice = R.drawable.dice_3
+            }
+            4 -> {
+                imageDice = R.drawable.dice_4
+            }
+            5 -> {
+                imageDice = R.drawable.dice_5
+            }
+            else -> {
+                imageDice = R.drawable.dice_6
+            }
+        }
+        imageData.setImageResource(imageDice)
+
+
+//        val resultText: TextView = findViewById(R.id.RandomNumber)
 //     declarando uma variavel de nome 'resultText' com ?classe? TextView e buscando no layout
 
 //       Ou binding.<nome da caixa de text>
-        resultText.text= randomInt
+//       resultText.text= randomInt
 //      jogando o texto do layout na variavel 'resultText'
 
         val Toast = Toast.makeText(this, "Rolou um dado!", Toast.LENGTH_SHORT) //cria a mensagem
         Toast.show() // exibe a mensagem
-        resultText.text = resultText.toString()
+//        resultText.text = resultText.toString()
 
 
     }
